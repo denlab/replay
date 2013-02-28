@@ -7,18 +7,18 @@ Instant test suites from repl transcripts!
 ## This is tiring:
 
 ```clj
-(comment "1. Explore in the REPL")
+(comment "I. Explore in the REPL")
 
 => (+ 1 1)
 2
 
-(comment "2. Then re-arrange the REPL session to form a unit test")
+(comment "II. Then re-arrange the REPL session to form a unit test")
 
 (t/deftest addition-test
   (t/is (= (+ 1 1)
            3)))
 
-(comment "3. Unit tests")
+(comment "III. Unit tests")
 
 => (addition-test)
 
@@ -30,18 +30,18 @@ expected: (= (+ 1 1) 3)
 ## Enter replay!
 
 ```clj
-(comment "1. Explore in the REPL")
+(comment "I. Explore in the REPL")
 
 => (+ 1 1)
 2
 
-(comment "2. Just cut & paste your curated REPL session")
+(comment "II. Just cut & paste your curated REPL session")
 
 (replay addition-lazy-test
   => (+ 1 1)
   3)
 
-(comment "3. Unit tests for (almost) free!")
+(comment "III. Unit tests for (almost) free!")
 
 => (addition-lazy-test)
 
