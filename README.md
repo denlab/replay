@@ -12,13 +12,13 @@ Instant test suites from repl transcripts!
 => (+ 1 1)
 2
 
-(comment "2. Then re-arrange the REPL session to form a unit test:")
+(comment "2. Then re-arrange the REPL session to form a unit test")
 
 (t/deftest addition-test
   (t/is (= (+ 1 1)
            3)))
 
-(comment "3. Unit tests:")
+(comment "3. Unit tests")
 
 => (addition-test)
 
@@ -35,7 +35,7 @@ expected: (= (+ 1 1) 3)
 => (+ 1 1)
 2
 
-(comment "2. Just cut & paste your curated REPL session:")
+(comment "2. Just cut & paste your curated REPL session")
 
 (replay addition-lazy-test
   => (+ 1 1)
