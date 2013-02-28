@@ -4,22 +4,20 @@ Instant test suites from repl transcripts!
 
     [net.cgrand/replay "0.1.1"]
 
-## Tired of re-typing your unit tests from your REPL session?
+## This is tiring:
 
-`REPL`
 ```clj
+(comment "Explore in the REPL")
+
 => (+ 1 1)
 2
-```
 
-`test.clj`
-```clj
+(comment "Then re-code the unit test in the test source file")
+
 (t/deftest addition-test
   (t/is (= (+ 1 1)
            3)))
-```
 
-```clj
 => (addition-test)
 
 FAIL in (addition-test) (NO_SOURCE_FILE:1)
@@ -29,21 +27,19 @@ expected: (= (+ 1 1) 3)
 
 ## Enter replay!
 
-`REPL`
 ```clj
+(comment "Explore in the REPL")
+
 => (+ 1 1)
 2
-```
 
-`test.clj`: simply copy & paste your currated REPL session:
-```clj
+(comment "Simply copy & paste your currated REPL session in your test
+source file:")
+
 (replay addition-lazy-test
   => (+ 1 1)
   2)
-```
 
-
-```clj
 (addition-lazy-test)
 
 FAIL in (addition-lazy-test) (NO_SOURCE_FILE:1)
