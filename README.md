@@ -7,16 +7,18 @@ Instant test suites from repl transcripts!
 ## This is tiring:
 
 ```clj
-(comment "Explore in the REPL")
+(comment "1. Explore in the REPL")
 
 => (+ 1 1)
 2
 
-(comment "Then re-code the unit test in the test source file")
+(comment "2. Then re-arrange the REPL session to form a unit test:")
 
 (t/deftest addition-test
   (t/is (= (+ 1 1)
            3)))
+
+(comment "3. Now we have regression tests:")
 
 => (addition-test)
 
@@ -28,19 +30,20 @@ expected: (= (+ 1 1) 3)
 ## Enter replay!
 
 ```clj
-(comment "Explore in the REPL")
+(comment 1. "Explore in the REPL")
 
 => (+ 1 1)
 2
 
-(comment "Simply copy & paste your currated REPL session in your test
-source file:")
+(comment "2. Simply cut & paste your curated REPL session:")
 
 (replay addition-lazy-test
   => (+ 1 1)
-  2)
+  3)
 
-(addition-lazy-test)
+(comment "3. Unit tests for (almost) free!")
+
+=> (addition-lazy-test)
 
 FAIL in (addition-lazy-test) (NO_SOURCE_FILE:1)
 expected: (clojure.core/= *1 (quote 3))
