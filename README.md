@@ -18,7 +18,7 @@ Instant test suites from repl transcripts!
   (t/is (= (+ 1 1)
            3)))
 
-(comment "3. Now we have regression tests:")
+(comment "3. Unit tests:")
 
 => (addition-test)
 
@@ -30,12 +30,12 @@ expected: (= (+ 1 1) 3)
 ## Enter replay!
 
 ```clj
-(comment 1. "Explore in the REPL")
+(comment "1. Explore in the REPL")
 
 => (+ 1 1)
 2
 
-(comment "2. Simply cut & paste your curated REPL session:")
+(comment "2. Just cut & paste your curated REPL session:")
 
 (replay addition-lazy-test
   => (+ 1 1)
